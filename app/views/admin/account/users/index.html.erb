@@ -28,7 +28,7 @@
                     <% if user.avatar.present? %>
                       <%= image_tag(user.avatar.thumbimage.url, style: "border-radius:50%; width: 50px; height:50px;", class: "text-center") %>
                     <% else %>
-                      <img src= "<%= render_user_avatar(current_user, 50) %>">
+                      <img src= "<%= render_user_avatar(user, 50) %>">
                     <% end %>
                   </td>
                   <td> <%= user.email %></td>
