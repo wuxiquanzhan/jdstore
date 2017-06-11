@@ -19,6 +19,9 @@ Rails.application.routes.draw do
         post :return
       end
     end
+    namespace :account do
+      resources :users
+    end
   end
 
   resources :products do
