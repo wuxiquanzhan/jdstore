@@ -142,6 +142,8 @@
 				  <div class="carousel-caption">
 					<h1 data-animation="animated zoomInLeft" class="cap-txt">Status ICO</h1>
 					<p data-animation="animated bounceInDown">Status is an open source messaging platform and mobile browser to interact with decentralized applications that run on the Ethereum Network.</p>
+          <div id="getting-started">
+          </div>
 					<button data-animation="animated bounceInUp" class="button button--tamaya button--border-thick" data-text="whitepaper"><a href="https://status.im/whitepaper.pdf">whitepaper</a></button>
 				  </div>
 				</div>
@@ -425,6 +427,15 @@ $('#nav .navbar-nav li>a, .navbar-header>a, .fa-caret-up').click(function(){
       scrollTop: position
     }, 1000);
 });
+</script>
+
+<script type="text/javascript">
+  $("#getting-started")
+  .countdown("2017/06/17 14:00:00", function(event) {
+    $(this).text(
+      event.strftime('%D days %H:%M:%S')
+    );
+  });
 </script>
 
 <script>

@@ -18,4 +18,5 @@
 //= require ckeditor/init
 //= require social-share-button
 //= require social-share-button/wechat
+//= require jquery.countdown.min
 //= require_tree .
