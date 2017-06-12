@@ -12,9 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require ckeditor/init
 //= require social-share-button
 //= require social-share-button/wechat
+//= require jquery.countdown.min
 //= require_tree .
