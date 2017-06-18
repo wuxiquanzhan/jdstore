@@ -41,11 +41,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
       if !current_cart.products.include?(@product)
         current_cart.add_product_to_cart(@product)
-        flash[:notice] = "你已成功将 #{@product.title} 加入购物车"
+        # flash[:notice] = "你已成功将 #{@product.title} 加入购物车"
       else
-        flash[:warning] = "你的购物车内已有此物品"
+        #  flash[:warning] = "你的购物车内已有此物品"
       end
-    redirect_to :back
   end
 
   def update_price
@@ -73,7 +72,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if !current_user.is_member_of?(@product)
       current_user.favorite!(@product)
-      redirect_to :back, notice: "已点赞宝贝！"
+      redirect_to :back  # , notice: "已点赞宝贝！"
     end
   end
 
@@ -81,7 +80,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if current_user.is_member_of?(@product)
       current_user.unfavorite!(@product)
-      redirect_to :back, notice: "已取消点赞！"
+      redirect_to :back  # , notice: "已取消点赞！"
     end
   end
 

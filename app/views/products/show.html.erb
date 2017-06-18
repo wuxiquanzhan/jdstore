@@ -40,18 +40,18 @@
             <p>  价格 :￥ <%= @product.price %> </p>
           </div>
           <div class="pd-info-add-cart-btn pull-right">
-            <% if @product.quantity.present? && @product.quantity > 0 %>
-               <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,
-               class: "btn btn-lg btn-add-to-cart pd-show-button") %>
-            <% else %>
-               已售罄
-            <% end %>
-            <% if !@product.members.include?(current_user) %>
-              <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %><%= @product.members.count %>
-            <% else %>
-              <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %><%= @product.members.count %>
-            <% end %>
+              <% if @product.quantity.present? && @product.quantity > 0 %>
+                  <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, :remote => true,
+                             class: "btn btn-lg btn-add-to-cart pd-show-button") %>
+              <% else %>
+                  已售罄
+              <% end %>
           </div>
+          <% if !@product.members.include?(current_user) %>
+             <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %><%= @product.members.count %>
+          <% else %>
+             <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %><%= @product.members.count %>
+          <% end %>
           <hr>
           <!-- qrcode二维码 -->
           <div id="overlay" onclick="off()">
